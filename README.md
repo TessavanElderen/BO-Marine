@@ -15,6 +15,6 @@
 
 ---
 
-<p align="center">
-    <img src="?raw=true" alt="Het logo van de Koninklijke Marine Nederland"/>
+<p align="right" style="height: 100px;">
+    <img src="https://github.com/TessavanElderen/BO-Marine/blob/main/images/Logo_Koninklijke_Marine.jpg?raw=true" alt="Het logo van de Koninklijke Marine Nederland"/>
 </p>
