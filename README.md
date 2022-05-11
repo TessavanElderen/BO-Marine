@@ -1,6 +1,6 @@
 # BO-Marine F1M4
 
-### Hier maken we een game voor de Koninklijke Marine van Nederland. Dit doen we met 7 mensen (3 developers en 4 artists) binnen 8 weken.
+### Hier maken we een game voor de Koninklijke Marine van Nederland. Dit doen we met 7 studenten van het Mediacollege Amsterdam (3 developers en 4 artists) binnen 8 weken.
 
 ### Hieronder staat de link naar onze Trello waar onze planning en ideeën staan. Dit verandert elke keer zolang we ermee bezig zijn.
 
