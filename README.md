@@ -1,4 +1,4 @@
-# BO-Marine F1M4
+# BO-Marine F2M4
 
 ### Hier maken we een game voor de Koninklijke Marine van Nederland. Dit doen we met 7 studenten van het Mediacollege Amsterdam (3 developers en 4 artists) binnen 8 weken.
 
