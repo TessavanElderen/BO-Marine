@@ -15,6 +15,5 @@
 
 ---
 
-<p align="center">
-    <img src="https://github.com/TessavanElderen/BO-Marine/blob/main/images/Logo_Koninklijke_Marine.jpg?raw=true" alt="Het logo van de Koninklijke Marine Nederland"/>
-</p>
+![Het logo van het Mediacollege Amsterdam](/images/Logo_Mediacollege_Amsterdam.png)
+![Het logo van de Koninklijke Marine Nederland](/images/Logo_Koninklijke_Marine.jpg)
