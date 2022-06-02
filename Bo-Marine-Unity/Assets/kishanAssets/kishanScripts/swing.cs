@@ -5,23 +5,23 @@ using UnityEngine;
 public class swing : MonoBehaviour
 {
     Collision collision;
-    //public ParticleSystem particlesystem;
-    public bool hit;
-    //private animator animator;
-    public float timeStop = 1;
-    public bool ableToHit;
+    [SerializeField] ParticleSystem particlesystem;
+    internal bool hit;
+    [SerializeField] Animator animator;
+    private float timeStop = 1;
+    private bool ableToHit;
+    internal float damage = 10f;
 
-    // Start is called before the first frame update
     void Start()
     {
         ableToHit = true;
-        //animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         hit = false;
-        //particlesystem.Stop();
+        particlesystem.Stop();
         
     }
 
-    private void Update()
+    void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -31,11 +31,12 @@ public class swing : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-            if (other.gameObject.tag == "enemy")
+        target target = other.transform.GetComponent<target>();
+        if (other.gameObject.tag == "enemy")
             {
                 hit = true;
-                //particlesystem.Play();
-                //animator.SetBool("hit", true);
+                particlesystem.Play();
+                animator.SetBool("hit", true);
                 Debug.Log(ableToHit);
                 if (ableToHit == true)
                 {
@@ -43,12 +44,13 @@ public class swing : MonoBehaviour
                     ableToHit = false;
                 }
                 StartCoroutine(particlestop(timeStop));
+                target.takeDamage(damage);
             }
     }
 
     IEnumerator particlestop(float time)
     {
         yield return new WaitForSeconds(time);
-        //particlesystem.Stop();
+        particlesystem.Stop();
     }
 }
