@@ -23,9 +23,9 @@ public class swing : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetButtonDown("Fire1"))
         {
-            
+            animator.SetBool("hit", true);
         }
     }
 
@@ -33,24 +33,16 @@ public class swing : MonoBehaviour
     {
         target target = other.transform.GetComponent<target>();
         if (other.gameObject.tag == "enemy")
+        {
+            hit = true;
+            particlesystem.Play();
+            Debug.Log(ableToHit);
+            if (ableToHit == true)
             {
-                hit = true;
-                particlesystem.Play();
-                animator.SetBool("hit", true);
                 Debug.Log(ableToHit);
-                if (ableToHit == true)
-                {
-                    Debug.Log(ableToHit);
-                    ableToHit = false;
-                }
-                StartCoroutine(particlestop(timeStop));
-                target.takeDamage(damage);
+                ableToHit = false;
             }
-    }
-
-    IEnumerator particlestop(float time)
-    {
-        yield return new WaitForSeconds(time);
-        particlesystem.Stop();
+            target.takeDamage(damage);
+        }
     }
 }

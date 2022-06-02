@@ -8,6 +8,7 @@ public class schieten : MonoBehaviour
     internal float impactForce = 60f;
     private int kogels = 3;
     private bool kanVuren = false;
+    private float timer = 2f;
 
     [SerializeField] Camera fpsCam;
     [SerializeField] ParticleSystem flash;
@@ -16,6 +17,8 @@ public class schieten : MonoBehaviour
 
     void Update()
     {
+        
+
         if (kanVuren == true && kogels > 0 && Input.GetButtonDown("Fire2"))
         {
             shoot();
@@ -26,14 +29,14 @@ public class schieten : MonoBehaviour
             kanVuren = true;
         }
 
-        if(kogels <= 2)
+        if(kogels < 2)
         {
-            StartCoroutine(reload());
+            reload();
         }
 
     }
 
-    void shoot()
+    private void shoot()
     {
 
         flash.Play();
@@ -50,14 +53,19 @@ public class schieten : MonoBehaviour
             }
 
             Instantiate(blood, hit.point, Quaternion.LookRotation(hit.normal));
-            kogels--;  
         }
+        kogels--;
     }
 
-    IEnumerator reload()
+    private void reload()
     {
-        yield return new WaitForSeconds(3);
-        kogels++;
+        timer -= Time.deltaTime;
+
+        if (timer <= 0)
+        {
+            kogels++;
+            timer = 2f;
+        }
     }
 
 }
