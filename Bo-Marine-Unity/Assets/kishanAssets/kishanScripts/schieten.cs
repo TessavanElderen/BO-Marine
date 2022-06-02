@@ -17,7 +17,7 @@ public class schieten : MonoBehaviour
 
     void Update()
     {
-        
+
 
         if (kanVuren == true && kogels > 0 && Input.GetButtonDown("Fire2"))
         {
@@ -29,7 +29,7 @@ public class schieten : MonoBehaviour
             kanVuren = true;
         }
 
-        if(kogels < 2)
+        if (kogels < 2)
         {
             reload();
         }
@@ -47,7 +47,7 @@ public class schieten : MonoBehaviour
             Debug.Log(hit.transform.name);
 
             target target = hit.transform.GetComponent<target>();
-            if(target != null)
+            if (target != null)
             {
                 target.takeDamage(damage);
             }
