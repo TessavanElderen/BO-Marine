@@ -6,7 +6,6 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
 
-    
     [SerializeField] private AudioMixerGroup musicMixerGroup;
     [SerializeField] private AudioMixerGroup soundEffectsMixerGroup;
     [SerializeField] private Sound[] sounds; //array for the sounds
@@ -17,7 +16,7 @@ public class AudioManager : MonoBehaviour
 
         foreach (Sound s in sounds)
         {
-            //loop though the audiosources
+            //foreach loop though the audiosources
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.audioClip;
             s.source.loop = s.isLoop;
@@ -64,6 +63,7 @@ public class AudioManager : MonoBehaviour
         s.source.Stop();
     }
 
+    //When you start the game again it stays on the last change.
     public void UpdateMixerVolume()
     { 
         musicMixerGroup.audioMixer.SetFloat("Music Volume", Mathf.Log10(AudioOptionsManager.musicVolume) * 20);
