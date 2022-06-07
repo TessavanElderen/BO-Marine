@@ -1,5 +1,9 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Mitchel.unity
+=======
+- path: Assets/Scenes/Kishan.unity
+>>>>>>> kishan
   isLoaded: 1
   isActive: 1
   isSubScene: 0
